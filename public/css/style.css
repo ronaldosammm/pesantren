@@ -1,0 +1,465 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    z-index: 10;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background: #e9e6df;
+    padding: 15px 25px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+.logo span {
+    font-size: 12px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+nav ul li a.active {
+    background: #2e7d5b;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    background: #2e7d5b;
+    color: white;
+    padding: 140px 0 120px;
+    min-height: 500px; /* FIX biar tidak pendek */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    margin-top: 15px;
+    width: 80%;
+}
+
+/* GAMBAR BULAT */
+.hero-image .image-placeholder {
+    width: 320px;
+    height: 320px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+/* ABOUT */
+/* HERO TENTANG */
+.about-hero {
+    background: #2e7d5b;
+    color: white;
+    text-align: center;
+    padding: 150px 0 80px;
+}
+
+.about-hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.about {
+    background: #f2f2f2;
+    padding: 80px 0; /* lebih panjang */
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #e0e0e0;
+    padding: 15px;
+    border-radius: 20px;
+    width: 30%;
+    min-height: 240px; /* FIX biar tinggi */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* GAMBAR CARD (FIX UTAMA) */
+.card .img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* FIX supaya tidak gepeng */
+    background: #bbb;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.card a {
+    color: green;
+    font-size: 14px;
+}
+
+/* FOOTER */
+.footer {
+    background: #0e5a3c;
+    color: white;
+    padding: 60px 0; /* lebih tinggi */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+/* SECTION WRAPPER */
+.about-page,
+.team-section {
+    background: #f2f2f2;
+    padding: 80px 0;
+}
+
+/* BOX STYLE */
+.about-box,
+.team-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2e7d5b;
+    position: relative;
+}
+
+/* GARIS AKSEN */
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #2e7d5b;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+/* CENTER CONTENT */
+.about-center {
+    text-align: center;
+}
+
+.about-center h3 {
+    margin-top: 15px;
+    color: #2e7d5b;
+}
+
+.about-center p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* TEAM GRID */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* TEAM ITEM */
+.team-item {
+    text-align: center;
+}
+
+/* FOTO KOTAK */
+.team-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ccc;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+/* NAMA */
+.team-item h4 {
+    margin: 5px 0;
+}
+
+/* JABATAN */
+.team-item p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* JARAK DARI NAVBAR */
+.about-page {
+    padding-top: 140px; /* biar turun dari navbar */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/*program
+
+/* HERO */
+.program-hero {
+    background: #2e7d5b;
+    color: white;
+    text-align: center;
+    padding: 150px 0 80px;
+}
+
+.program-hero h1 {
+    font-size: 40px;
+}
+
+/* PROGRAM LIST */
+.program-list {
+    padding: 80px 0;
+    background: #f2f2f2;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* CARD */
+.program-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+}
+
+.program-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #ccc;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.program-card span {
+    display: block;
+    margin: 10px 0;
+    color: #777;
+}
+
+.program-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background: #2e7d5b;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* BENEFIT */
+.program-benefit {
+    background: #f2f2f2;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.benefit-list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    font-size: 18px;
+}
+
+/* CTA */
+.program-cta {
+    background: #f2f2f2;
+    color: #2e7d5b;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.btn-daftar {
+    display: inline-block;
+    margin-top: 20px;
+    background: white;
+    color: #2e7d5b;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*contact
+
+/* HERO */
+.contact-hero {
+    background: #2e7d5b;
+    color: white;
+    text-align: center;
+    padding: 150px 0 80px;
+}
+
+/* SECTION */
+.contact-section {
+    padding: 80px 0;
+    background: #f2f2f2;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+/* INFO */
+.contact-info {
+    width: 40%;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* FORM */
+.contact-form {
+    width: 60%;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    background: #2e7d5b;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* HOVER */
+.contact-form button:hover {
+    background: #256b4d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
