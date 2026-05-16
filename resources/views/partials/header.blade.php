@@ -22,6 +22,12 @@
 <li>
     <a href="/contact" class="{{ request()->is('contact') ? 'active' : '' }}">Kontak</a>
 </li>
+
+<li>
+    <a href="/login" class="{{ request()->is('login') ? 'active' : '' }}">
+        Login
+    </a>
+</li>
             </ul>
         </nav>
     </div>

@@ -16,30 +16,38 @@
 
         <div class="program-grid">
 
-            <!-- CARD -->
-            <div class="program-card">
-                <div class="program-img"></div>
-                <h3>Tahfidz Intensif</h3>
-                <p>Program menghafal Al-Qur’an dengan metode Kauny.</p>
-                <span>Durasi: 3 Bulan</span>
-                <a href="#">Lihat Detail</a>
-            </div>
+            @forelse ($program as $item)
 
-            <div class="program-card">
-                <div class="program-img"></div>
-                <h3>Tahsin Al-Qur’an</h3>
-                <p>Memperbaiki bacaan Al-Qur’an sesuai tajwid.</p>
-                <span>Durasi: 2 Bulan</span>
-                <a href="#">Lihat Detail</a>
-            </div>
+                <div class="program-card">
 
-            <div class="program-card">
-                <div class="program-img"></div>
-                <h3>Kelas Anak</h3>
-                <p>Pembelajaran Qur’an untuk anak-anak.</p>
-                <span>Durasi: 6 Bulan</span>
-                <a href="#">Lihat Detail</a>
-            </div>
+                    <div class="program-img">
+
+                        @if ($item->gambar)
+
+                            <img 
+                                src="{{ asset('uploads/program/' . $item->gambar) }}" 
+                                alt="{{ $item->nama_program }}"
+                            >
+
+                        @endif
+
+                    </div>
+
+                    <h3>{{ $item->nama_program }}</h3>
+
+                    <p>{{ $item->deskripsi_program }}</p>
+
+                    <span>Durasi: {{ $item->durasi }}</span>
+
+                    <a href="#">Lihat Detail</a>
+
+                </div>
+
+            @empty
+
+                <p>Program belum tersedia.</p>
+
+            @endforelse
 
         </div>
 

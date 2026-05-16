@@ -43,43 +43,40 @@
     <div class="container">
 
         <div class="team-box">
+
             <h2 class="section-title">Tim Kami</h2>
 
             <div class="team-grid">
-                
 
-                <!-- ITEM -->
-                <div class="team-item">
-                    <div class="team-img"></div>
-                    <h4>Nama 1</h4>
-                    <p>Jabatan</p>
-                </div>
+                @forelse ($tim as $item)
 
-                <div class="team-item">
-                    <div class="team-img"></div>
-                    <h4>Nama 2</h4>
-                    <p>Jabatan</p>
-                </div>
+                    <div class="team-item">
 
-                <div class="team-item">
-                    <div class="team-img"></div>
-                    <h4>Nama 3</h4>
-                    <p>Jabatan</p>
-                </div>
+                        <div class="team-img">
 
-                <div class="team-item">
-                    <div class="team-img"></div>
-                    <h4>Nama 4</h4>
-                    <p>Jabatan</p>
-                </div>
+                            @if ($item->foto)
 
-                <div class="team-item">
-                    <div class="team-img"></div>
-                    <h4>Nama 5</h4>
-                    <p>Jabatan</p>
-                </div>
+                                <img 
+                                    src="{{ asset('uploads/tim/' . $item->foto) }}"
+                                    alt="{{ $item->nama }}"
+                                >
 
-            </div>
+                            @endif
+
+                        </div>
+
+                        <h4>{{ $item->nama }}</h4>
+
+                        <p>{{ $item->jabatan }}</p>
+
+                    </div>
+
+                @empty
+
+                    <p>Data tim belum tersedia.</p>
+
+                @endforelse
+
             </div>
 
         </div>
