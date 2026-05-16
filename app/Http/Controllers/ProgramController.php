@@ -47,7 +47,7 @@ class ProgramController extends Controller
     {
         $program = Program::findOrFail($id);
 
-        return view('admin.program.edit', compact('program'));
+       return view('admin.programAdmin.edit', compact('program'));
     }
 
     public function update(Request $request, $id)

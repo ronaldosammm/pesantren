@@ -96,3 +96,7 @@ Route::middleware('auth')->group(function () {
     })->name('admin');
 
 });
+
+Route::get('/pengaturan', function () {
+    return view('admin.pengaturan');
+})->name('pengaturan');

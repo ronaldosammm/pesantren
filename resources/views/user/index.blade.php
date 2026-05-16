@@ -7,12 +7,20 @@
     <div class="container hero-content">
 
         <div class="hero-text">
-            <h1>BERPIJAK <br> PADA TRADISI <br> TERBANG MENUJU MIMPI</h1>
+
+            <h1>
+                BERPIJAK PADA TRADISI <br>
+                MENUMBUHKAN ILMU <br>
+                MENUJU MASA DEPAN GEMILANG
+            </h1>
 
             <p>
-                setiap anak adalah benih unggul.tugas kita bukan memaksanya mekar saat ini juga,
-                tapi memastikan tanahnya cukup kasih sayang dan air nya adalah keteladanan
+                Setiap anak merupakan amanah berharga yang memiliki potensi luar biasa.
+                Tugas pendidikan bukan hanya membentuk kecerdasan, tetapi juga menanamkan
+                akhlak, keteladanan, dan nilai-nilai keislaman agar tumbuh menjadi generasi
+                yang berilmu, berkarakter, dan bermanfaat bagi umat.
             </p>
+
         </div>
 
         <div class="hero-image">
@@ -27,13 +35,19 @@
 
     <div class="container">
 
-        <h2>Tentang kami</h2>
+        <h2>Tentang Kami</h2>
 
         <p>
-            Askar Kauny adalah Lembaga Dakwah Al-Qur’an yang berkhidmat dalam mengajarkan,
-            menyebarkan cahaya Al-Qur’an ke seluruh penjuru Dunia dan mencetak generasi Qur’ani.
-            Yayasan Askar Kauny adalah lembaga non profit yang bergerak di bidang sosial dan pendidikan,
-            serta berkhidmat dalam mencetak generasi penghafal Alquran.
+            Askar Kauny merupakan lembaga dakwah dan pendidikan Al-Qur’an yang berkomitmen
+            dalam membina generasi Qur’ani melalui pendidikan yang berlandaskan nilai-nilai Islam.
+            Kami hadir untuk menanamkan kecintaan terhadap Al-Qur’an, membangun akhlak mulia,
+            serta mencetak generasi yang unggul dalam ilmu pengetahuan, spiritualitas, dan kepemimpinan.
+
+            <br><br>
+
+            Sebagai lembaga sosial dan pendidikan non-profit, Askar Kauny terus berupaya
+            memberikan kontribusi terbaik bagi masyarakat melalui program pendidikan,
+            pembinaan karakter, serta pengembangan hafalan Al-Qur’an yang berkualitas dan berkelanjutan.
         </p>
 
         <div class="cards">
@@ -59,15 +73,17 @@
 
                     <p>{{ $item->deskripsi_program }}</p>
 
-                    <span>Durasi: {{ $item->durasi }}</span>
+                    <span>Durasi Program: {{ $item->durasi }}</span>
 
-                    <a href="/program">Selengkapnya</a>
+                    <a href="/program">
+                        Lihat Selengkapnya
+                    </a>
 
                 </div>
 
             @empty
 
-                <p>Program belum tersedia.</p>
+                <p>Program pendidikan belum tersedia saat ini.</p>
 
             @endforelse
 
