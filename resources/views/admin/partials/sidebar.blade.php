@@ -1,24 +1,24 @@
 <div class="sidebar">
-
     <ul>
         <li>
-            <a href="/admin">Dashboard</a>
+            <a href="/admin" class="{{ request()->is('admin') ? 'active' : '' }}">
+                <i class='bx bx-grid-alt'></i> Dashboard
+            </a>
         </li>
-
-       
-
-
         <li>
-            <a href="/programAdmin">Program</a>
+            <a href="/programAdmin" class="{{ request()->is('programAdmin*') ? 'active' : '' }}">
+                <i class='bx bx-book-open'></i> Program
+            </a>
         </li>
-
         <li>
-            <a href="/timAdmin">Tim</a>
+            <a href="/timAdmin" class="{{ request()->is('timAdmin*') ? 'active' : '' }}">
+                <i class='bx bx-group'></i> Tim
+            </a>
         </li>
-
         <li>
-            <a href="/pengaturan">Pengaturan</a>
+            <a href="/pengaturan" class="{{ request()->is('pengaturan') ? 'active' : '' }}">
+                <i class='bx bx-cog'></i> Pengaturan
+            </a>
         </li>
     </ul>
-
 </div>

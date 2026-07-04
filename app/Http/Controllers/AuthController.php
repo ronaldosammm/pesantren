@@ -1,45 +1,64 @@
 <?php
-
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // halaman login
-    public function login()
+// halaman login
+public function login()
     {
-        return view('login');
+return view('login');
     }
 
-    // proses login
-    public function process(Request $request)
+// proses login
+public function process(Request $request)
 {
-    $credentials = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required'
+$credentials = $request->validate([
+'email' => 'required|email',
+'password' => 'required'
     ]);
-
-    if (Auth::attempt($credentials)) {
-
-        $request->session()->regenerate();
-
-        return redirect('/admin');
+if (Auth::attempt($credentials)) {
+$request->session()->regenerate();
+return redirect('/admin');
     }
-
-    return back()->with('error', 'Email atau password salah');
+return back()->with('error', 'Email atau password salah');
 }
 
-    // logout
-    public function logout(Request $request)
+// halaman daftar
+public function register()
     {
-        Auth::logout();
+return view('register');
+    }
 
-        $request->session()->invalidate();
+// proses daftar
+public function registerProcess(Request $request)
+{
+$validated = $request->validate([
+'name' => 'required|string|max:255',
+'email' => 'required|email|unique:users,email',
+'password' => 'required|min:8|confirmed'
+    ], [
+'email.unique' => 'Email ini sudah terdaftar. Silakan login.'
+    ]);
 
-        $request->session()->regenerateToken();
+$user = User::create([
+'name' => $validated['name'],
+'email' => $validated['email'],
+'password' => Hash::make($validated['password'])
+    ]);
 
-        return redirect('/login');
+return redirect('/login')->with('success', 'Akun berhasil dibuat. Silakan login.');
+}
+
+// logout
+public function logout(Request $request)
+    {
+Auth::logout();
+$request->session()->invalidate();
+$request->session()->regenerateToken();
+return redirect('/login');
     }
 }
