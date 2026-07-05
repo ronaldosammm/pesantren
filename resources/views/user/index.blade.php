@@ -18,7 +18,9 @@
             </p>
         </div>
         <div class="hero-image">
-            <div class="image-placeholder"></div>
+            <div class="image-placeholder">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo Ma'had Askar Kauny">
+            </div>
         </div>
     </div>
 </section>

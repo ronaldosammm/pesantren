@@ -16,6 +16,11 @@
             </a>
         </li>
         <li>
+            <a href="/pendaftaranAdmin" class="{{ request()->is('pendaftaranAdmin*') ? 'active' : '' }}">
+                <i class='bx bx-user-plus'></i> Pendaftaran
+            </a>
+        </li>
+        <li>
             <a href="/pengaturan" class="{{ request()->is('pengaturan') ? 'active' : '' }}">
                 <i class='bx bx-cog'></i> Pengaturan
             </a>

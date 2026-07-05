@@ -160,6 +160,22 @@ nav ul li a.active {
     font-weight: 600;
 }
 
+nav ul li a.nav-cta{
+    background: var(--gold);
+    color: var(--forest-dark);
+    font-weight: 600;
+}
+
+nav ul li a.nav-cta:hover{
+    background: var(--gold-light);
+}
+
+nav ul li a.nav-cta.active{
+    background: var(--forest-dark);
+    color: var(--white);
+    border: 1px solid var(--gold);
+}
+
 /* =========================================================
    HERO (home)
    ========================================================= */
@@ -226,6 +242,17 @@ nav ul li a.active {
     border: 6px solid rgba(227,207,164,0.5);
     box-shadow: 0 25px 50px rgba(0,0,0,0.28);
     flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.hero-image .image-placeholder img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* =========================================================
@@ -233,7 +260,8 @@ nav ul li a.active {
    ========================================================= */
 .about-hero,
 .program-hero,
-.contact-hero {
+.contact-hero,
+.pendaftaran-hero {
     position: relative;
     background: linear-gradient(160deg, var(--forest-dark) 0%, var(--forest) 100%);
     color: var(--white);
@@ -244,7 +272,8 @@ nav ul li a.active {
 
 .about-hero::after,
 .program-hero::after,
-.contact-hero::after{
+.contact-hero::after,
+.pendaftaran-hero::after{
     content:"";
     position:absolute;
     left:50%; bottom:-1px;
@@ -256,7 +285,8 @@ nav ul li a.active {
 
 .about-hero h1,
 .program-hero h1,
-.contact-hero h1 {
+.contact-hero h1,
+.pendaftaran-hero h1 {
     font-size: 42px;
     color: var(--white);
     margin-bottom: 12px;
@@ -264,7 +294,8 @@ nav ul li a.active {
 
 .about-hero p,
 .program-hero p,
-.contact-hero p{
+.contact-hero p,
+.pendaftaran-hero p{
     font-weight: 300;
     color: rgba(255,255,255,0.82);
     max-width: 560px;
@@ -1018,6 +1049,148 @@ nav ul li a.active {
     color: var(--forest-dark);
 }
 
+/* =========================================================
+   PENDAFTARAN (public registration form)
+   ========================================================= */
+.pendaftaran-section{
+    padding: 90px 0;
+    background: var(--cream);
+}
+
+.pendaftaran-card{
+    background: var(--white);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 44px 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(184,147,90,0.15);
+    box-shadow: 0 15px 40px rgba(31,77,61,0.08);
+}
+
+.pendaftaran-card > .eyebrow{
+    display: flex;
+    justify-content: center;
+}
+
+.pendaftaran-card h2{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.pendaftaran-lead{
+    text-align: center;
+    color: var(--muted);
+    font-weight: 300;
+    font-size: 14.5px;
+    max-width: 520px;
+    margin: 0 auto 36px;
+}
+
+.pendaftaran-form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 24px;
+}
+
+.pendaftaran-form-grid .full-width{
+    grid-column: 1 / -1;
+}
+
+.pendaftaran-field label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.2px;
+}
+
+.pendaftaran-field input,
+.pendaftaran-field select,
+.pendaftaran-field textarea{
+    width: 100%;
+    padding: 11px 4px;
+    border: none;
+    border-bottom: 1.5px solid rgba(184,147,90,0.4);
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    color: var(--ink);
+    outline: none;
+    transition: 0.25s;
+}
+
+.pendaftaran-field select{
+    background: var(--white);
+}
+
+.pendaftaran-field textarea{
+    resize: vertical;
+    min-height: 90px;
+}
+
+.pendaftaran-field input:focus,
+.pendaftaran-field select:focus,
+.pendaftaran-field textarea:focus{
+    border-bottom-color: var(--forest);
+}
+
+.pendaftaran-field small.error-text{
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #B23A3A;
+}
+
+.pendaftaran-submit{
+    grid-column: 1 / -1;
+    background: var(--forest);
+    color: var(--white);
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-top: 8px;
+    transition: 0.25s;
+}
+
+.pendaftaran-submit:hover{
+    background: var(--gold);
+    color: var(--forest-dark);
+}
+
+.alert-success,
+.alert-error{
+    max-width: 780px;
+    margin: 0 auto 24px;
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.alert-success{
+    background: rgba(31,77,61,0.08);
+    color: var(--forest);
+    border: 1px solid rgba(31,77,61,0.2);
+}
+
+.alert-error{
+    background: rgba(178,58,58,0.08);
+    color: #B23A3A;
+    border: 1px solid rgba(178,58,58,0.2);
+}
+
+@media (max-width: 700px){
+    .pendaftaran-form-grid{ grid-template-columns: 1fr; }
+    .pendaftaran-card{ padding: 32px 24px; }
+}
+
 @media (max-width: 768px) {
     .contact-wrapper { flex-direction: column; }
     .contact-info, .contact-form { width: 100%; }
@@ -1104,4 +1277,218 @@ nav ul li a.active {
 .login-btn:hover{
     background: var(--gold);
     color: var(--forest-dark);
+}
+
+/* =========================================================
+   ADMIN DASHBOARD
+   ========================================================= */
+.dash-header{
+    margin-bottom: 34px;
+}
+
+.dash-header h1{
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.dash-header p{
+    color: var(--muted);
+    font-weight: 300;
+    font-size: 14.5px;
+}
+
+.dash-stats{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+    margin-bottom: 32px;
+}
+
+.dash-stat-card{
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid rgba(184,147,90,0.15);
+    box-shadow: 0 10px 26px rgba(31,77,61,0.06);
+    padding: 24px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.dash-stat-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(31,77,61,0.12);
+}
+
+.dash-stat-icon{
+    width: 52px;
+    height: 52px;
+    border-radius: 50% 50% 8px 8px;
+    background: var(--forest);
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.dash-stat-info h3{
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.dash-stat-number{
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1;
+}
+
+.dash-stat-caption{
+    display: block;
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--muted);
+    font-weight: 300;
+}
+
+.dash-grid{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+    align-items: start;
+}
+
+.dash-panel{
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid rgba(184,147,90,0.15);
+    box-shadow: 0 10px 26px rgba(31,77,61,0.06);
+    padding: 26px 24px;
+}
+
+.dash-panel h2{
+    font-size: 19px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dash-panel-tag{
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(184,147,90,0.12);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.dash-quick-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dash-btn{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 6px;
+    background: var(--cream);
+    border: 1px solid rgba(184,147,90,0.2);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.dash-btn:hover{
+    background: var(--forest);
+    color: var(--white);
+    border-color: var(--forest);
+}
+
+.dash-btn-icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition: 0.2s;
+}
+
+.dash-btn:hover .dash-btn-icon{
+    background: var(--gold);
+    color: var(--forest-dark);
+}
+
+/* table */
+.dash-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dash-table th{
+    text-align: left;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    font-weight: 600;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(184,147,90,0.2);
+}
+
+.dash-table td{
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(184,147,90,0.1);
+    color: var(--ink);
+    vertical-align: middle;
+}
+
+.dash-table tr:last-child td{ border-bottom: none; }
+
+.dash-empty{
+    text-align: center;
+    color: var(--muted);
+    font-weight: 300;
+    padding: 26px 0 !important;
+}
+
+.dash-thumb{
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50% 6px 6px;
+    background: linear-gradient(150deg, var(--sand), var(--gold-light));
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.dash-thumb img{ width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 1024px){
+    .dash-grid{ grid-template-columns: 1fr; }
 }
