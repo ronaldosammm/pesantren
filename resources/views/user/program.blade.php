@@ -27,7 +27,7 @@
                     <h3>{{ $item->nama_program }}</h3>
                     <p>{{ $item->deskripsi_program }}</p>
                     <span>Durasi: {{ $item->durasi }}</span>
-                    <a href="#">Lihat Detail</a>
+                    <a href="{{ route('program.detail', $item->id) }}">Detail</a>
                 </div>
             @empty
                 <p>Program belum tersedia.</p>

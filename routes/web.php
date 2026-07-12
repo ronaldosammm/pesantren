@@ -67,6 +67,8 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerProcess'])->name('register.process');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/program/{id}', [ProgramController::class, 'detail'])->name('program.detail');
+
 // ======================
 // ADMIN DASHBOARD & PENGATURAN (protected)
 // ======================

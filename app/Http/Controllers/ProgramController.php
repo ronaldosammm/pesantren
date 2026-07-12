@@ -93,6 +93,13 @@ class ProgramController extends Controller
     return view('user.program', compact('program'));
 }
 
+public function detail($id)
+{
+    $item = Program::findOrFail($id);
+
+    return view('user.detail', compact('item'));
+}
+
 public function home()
 {
     $program = Program::all();
